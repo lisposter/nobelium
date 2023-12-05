@@ -1,3 +1,4 @@
+import { createHash } from 'crypto'
 import { clientConfig } from '@/lib/server/config'
 
 import Container from '@/components/Container'
@@ -21,7 +22,7 @@ export async function getStaticProps () {
   }
 
   const emailHash = createHash('md5')
-    .update(BLOG.email)
+    .update(clientConfig.email)
     .digest('hex')
     .trim()
     .toLowerCase()
