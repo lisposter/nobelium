@@ -23,6 +23,12 @@ const BLOG = {
     keywords: ['Blog', 'Website', 'Notion'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
   },
+  navLinks: [
+    { name: 'Index', to: '/' },
+    { name: 'About', to: '/about' },
+    { name: 'RSS', to: '/feed', external: true },
+    { name: 'Search', to: '/search' }
+  ],
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
   analytics: {

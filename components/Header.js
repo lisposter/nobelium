@@ -8,7 +8,12 @@ import useTheme from '@/lib/theme'
 const NavBar = () => {
   const BLOG = useConfig()
   const locale = useLocale()
-  const links = [
+  const links = BLOG.navLinks.length ? BLOG.navLinks.map((link, id) => {
+    link.name = locale.NAV[link.localeKey] || link.name;
+    link.show = link.show === undefined ? true : link.show;
+    link.id = id;
+    return link;
+  }) : [
     { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
     { id: 1, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
     { id: 2, name: locale.NAV.RSS, to: '/feed', show: true, external: true },
