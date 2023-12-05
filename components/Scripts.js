@@ -6,14 +6,14 @@ const Scripts = () => {
 
   return (
     <>
-      {BLOG.analytics && BLOG.analytics.provider === 'ackee' && (
+      {BLOG.analytics && BLOG.analytics.provider?.indexOf('ackee') >= 0 && (
         <Script
           src={BLOG.analytics.ackeeConfig.tracker}
           data-ackee-server={BLOG.analytics.ackeeConfig.dataAckeeServer}
           data-ackee-domain-id={BLOG.analytics.ackeeConfig.domainId}
         />
       )}
-      {BLOG.analytics && BLOG.analytics.provider === 'umami' && (
+      {BLOG.analytics && BLOG.analytics.provider.indexOf('umami') >= 0 && (
         <Script
           async
           defer
@@ -21,7 +21,7 @@ const Scripts = () => {
           src={BLOG.analytics.umamiConfig.src}
         />
       )}
-      {BLOG.analytics && BLOG.analytics.provider === 'ga' && (
+      {BLOG.analytics && BLOG.analytics.provider.indexOf('ga') >= 0 && (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${BLOG.analytics.gaConfig.measurementId}`}
