@@ -34,6 +34,10 @@ const BLOG = {
     },
     gaConfig: {
       measurementId: '' // e.g: G-XXXXXXXXXX
+    },
+    umamiConfig: {
+      websiteId: '',
+      src: ''
     }
   },
   comment: {
@@ -63,10 +67,10 @@ const BLOG = {
       requiredMeta: ['nick'],
       dark: 'body.dark-mode',
       emoji: [
-        '//jscdn.innomad.io/gh/walinejs/emojis/tw-emoji'
+
       ],
       reaction: [
-        '//jscdn.innomad.io/gh/walinejs/emojis/tw-body/1f44d.png'
+
       ],
       search: false,
       imageUploader: false,
