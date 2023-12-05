@@ -1,5 +1,5 @@
 import { useConfig } from '@/lib/config'
-import Vercel from '@/components/Vercel'
+import License from '@/components/License'
 const Footer = ({ fullWidth }) => {
   const BLOG = useConfig()
 
@@ -18,7 +18,7 @@ const Footer = ({ fullWidth }) => {
           <p>
             © {BLOG.author} {from === y || !from ? y : `${from} - ${y}`}
           </p>
-          <Vercel />
+          <License />
         </div>
       </div>
     </div>
